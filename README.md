@@ -1,8 +1,10 @@
-# Humanizer-zh-tw
+# Humanizer-zh-tw：台灣繁體中文 AI 寫作痕跡清除技能
+
+把 AI 味改成道地的台灣中文，涵蓋 46 種模式，含中國用語偵測與中文標點保護。
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
 
-去除繁體中文文字裡的 AI 生成痕跡，讓文章讀起來像真人寫的。這是一個 Claude skill，也能用在任何支援 skill 格式的 agent 環境。
+這是一個 Claude skill，也能用在任何支援 skill 格式的 agent 環境。
 
 這是 [blader/humanizer](https://github.com/blader/humanizer) 的台灣繁體中文在地化版本，以原版 v2.9.1 為基底重寫，不是逐句翻譯。原版依據維基百科的 [Signs of AI writing](https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing) 指南整理出 33 種 AI 寫作模式；本版把它們改編成中文語境的對應形態，加上 5 種只有中文才有的痕跡、3 種節奏與立場層的痕跡、3 種中文標點痕跡（冒號與分號濫用、引號當強調、驚嘆號連發），以及 2 種工具痕跡（AI 工具殘留物、幻覺引用與假精確），共 46 種模式。
 
