@@ -1,0 +1,4 @@
+interface:
+  display_name: "Humanizer-zh-tw"
+  short_description: "去除繁體中文文字的 AI 寫作痕跡"
+  default_prompt: "用 $humanizer-zh-tw 把這段文字去掉 AI 味，保留原意與事實，並改成自然的台灣繁體中文。"

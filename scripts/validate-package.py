@@ -20,8 +20,9 @@ SKILL = (ROOT / "SKILL.md").read_text()
 README = (ROOT / "README.md").read_text()
 PLUGIN = json.loads((ROOT / ".claude-plugin" / "plugin.json").read_text())
 
-# 行數軟上限：超過只警告。中文範例多，比原版 500 寬鬆。
-LINE_SOFT_LIMIT = 900
+# 行數軟上限：超過只警告。範例已外移到 PATTERNS.md，SKILL 只留規則與偵測要點，
+# 超過此線通常代表範例又混回 SKILL，或有段落該再精簡。
+LINE_SOFT_LIMIT = 650
 
 
 def fail(message: str) -> None:
@@ -68,6 +69,27 @@ expected = list(range(1, len(pattern_numbers) + 1))
 if pattern_numbers != expected:
     fail(f"模式編號應為 1 到 {len(pattern_numbers)} 連續，實際為 {pattern_numbers}")
 pattern_count = len(pattern_numbers)
+
+# --- PATTERNS.md：範例外掛檔，模式編號須與 SKILL 完全對齊 ---
+patterns_path = ROOT / "PATTERNS.md"
+if not patterns_path.exists():
+    fail("缺 PATTERNS.md（SKILL.md 的模式範例外掛檔）")
+patterns_doc = patterns_path.read_text()
+patterns_numbers = [
+    int(n) for n in re.findall(r"(?m)^## 模式 ([0-9]+)\. ", patterns_doc)
+]
+if patterns_numbers != pattern_numbers:
+    fail(
+        f"PATTERNS.md 模式編號與 SKILL.md 不一致："
+        f"SKILL {pattern_numbers} vs PATTERNS {patterns_numbers}"
+    )
+# 每個模式在 SKILL 都要有指向 PATTERNS 的指標
+pointer_count = len(re.findall(r"範例見 \[PATTERNS\.md\]", SKILL))
+if pointer_count != pattern_count:
+    fail(
+        f"SKILL.md 指向 PATTERNS.md 的指標有 {pointer_count} 個，"
+        f"但模式有 {pattern_count} 種，每個模式都應有一個指標"
+    )
 
 # --- README 總覽表標題的數字須等於模式數：'## N 種模式總覽' ---
 overview = require(
