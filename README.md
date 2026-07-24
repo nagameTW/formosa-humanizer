@@ -1,6 +1,6 @@
-# Humanizer-zh-tw：台灣繁體中文 AI 寫作痕跡清除技能
+# Humanizer-zh-tw：AI 寫作痕跡清除技能（台灣在地強化版）
 
-把 AI 味改成道地的台灣中文，涵蓋 46 種模式，含中國用語偵測與中文標點保護。
+把 AI 生成的文章改成道地的台灣中文，涵蓋 46 種模式，含中國用語偵測與中文標點保護。
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
 
