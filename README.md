@@ -67,7 +67,7 @@
 npx skills add nagameTW/humanizer-zh-tw --global
 ```
 
-不指定 `--agent` 時會出現互動選單讓你挑安裝目標；要跳過選單就直接指定，例如 `--agent claude-code`。
+`skills` 會偵測你環境裡的 agent（Claude Code、GitHub Copilot 等）自動安裝，並在安裝前跑一次第三方安全掃描。技能本體放在 `~/.agents/skills/`，各 agent 以 symlink 指過去共用同一份。
 
 更新既有安裝：
 
@@ -79,13 +79,13 @@ npx skills update humanizer-zh-tw --global
 
 ### 手動安裝
 
-技能本體就是 `SKILL.md`，複製到你的 agent 環境放技能的目錄即可：
+不想用 `skills` CLI 的話，直接把整個 repo clone 到 agent 放技能的目錄也可以。以 Claude Code 為例：
 
 ```bash
 git clone https://github.com/nagameTW/humanizer-zh-tw.git ~/.claude/skills/humanizer-zh-tw
 ```
 
-安裝後重新啟動 agent 或重新載入技能。
+其他 agent 換成各自的技能目錄。clone 整包（而非只複製 `SKILL.md`）才會一併帶到 `PATTERNS.md` 和 `references/`，SKILL.md 裡指向範例與對照表的連結才不會斷。安裝後重新啟動 agent 或重新載入技能。
 
 ## 使用
 
