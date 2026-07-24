@@ -1,0 +1,13 @@
+humanizer-zh-tw
+Copyright (c) 2026 nagameTW
+
+本專案以 MIT 授權釋出，詳見 LICENSE。
+
+這份技能改編自下列上游專案，一併致謝並保留其著作權標示：
+
+- blader/humanizer (MIT) — https://github.com/blader/humanizer
+  模式目錄與方法論的來源。
+- 歸藏 / op7418/Humanizer-zh (MIT) — https://github.com/op7418/Humanizer-zh
+  簡體中文移植的先行版本，本專案的繁體在地化參考了它的社群回報。
+
+原始模式整理自維基百科 Signs of AI writing（WikiProject AI Cleanup 維護）。
