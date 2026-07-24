@@ -157,7 +157,7 @@ git clone https://github.com/nagameTW/humanizer-zh-tw.git ~/.claude/skills/human
 
 ## 支援環境
 
-技能需要一個支援 skill 格式的 agent 環境才能運作，例如 Claude Code、Codex CLI 或其他相容工具。純聊天應用程式（網頁版聊天室、手機 App 的對話介面）沒有技能載入機制；把 SKILL.md 內容貼進對話當提示詞勉強可用，但檔案模式這類功能不會生效。
+技能需要一個支援 skill 的 agent 環境才能運作，例如 Claude Code、Codex CLI 或其他相容工具。純聊天應用程式（網頁版聊天室、手機 App 的對話介面）沒有技能載入機制；把 SKILL.md 內容貼進對話當提示詞勉強可用，但檔案模式這類功能不會生效。
 
 ## 這個工具不做什麼
 
