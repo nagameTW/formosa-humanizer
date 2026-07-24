@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
+  "name": "humanizer-zh-tw",
+  "description": "去除文字中的 AI 生成痕跡，讓繁體中文讀起來更自然、更像真人書寫。基於 blader/humanizer，針對台灣繁體中文在地化，共 38 種模式。",
+  "version": "1.0.0",
+  "author": {
+    "name": "nagameTW",
+    "url": "https://github.com/nagameTW"
+  },
+  "homepage": "https://github.com/nagameTW/humanizer-zh-tw",
+  "repository": "https://github.com/nagameTW/humanizer-zh-tw",
+  "license": "MIT",
+  "keywords": ["writing", "editing", "ai-detection", "humanize", "prose", "style", "chinese", "traditional-chinese", "zh-tw", "taiwan"]
+}

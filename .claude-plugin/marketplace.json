@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-marketplace-manifest.json",
+  "name": "humanizer-zh-tw",
+  "owner": {
+    "name": "nagameTW",
+    "url": "https://github.com/nagameTW"
+  },
+  "description": "humanizer-zh-tw 技能，可作為 Claude Code 外掛安裝。",
+  "plugins": [
+    {
+      "name": "humanizer-zh-tw",
+      "source": "./",
+      "description": "去除 AI 寫作痕跡的繁體中文（台灣）在地化版本，基於 blader/humanizer v2.9.1，共 38 種模式。",
+      "license": "MIT",
+      "keywords": ["writing", "editing", "ai-detection", "humanize", "prose", "style", "chinese", "traditional-chinese", "zh-tw", "taiwan"]
+    }
+  ]
+}
