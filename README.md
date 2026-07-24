@@ -2,7 +2,7 @@
 
 去除文字中的 AI 生成痕跡，讓繁體中文讀起來像真人寫的。
 
-這是 [blader/humanizer](https://github.com/blader/humanizer) 的台灣繁體中文在地化版本，以原版 v2.9.1 為基底重寫，不是逐句翻譯。原版依據維基百科的 [Signs of AI writing](https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing) 指南整理出 33 種 AI 寫作模式；本版把它們改編成中文語境的對應形態，再加上 5 種只有中文才有的痕跡，共 38 種模式。
+這是 [blader/humanizer](https://github.com/blader/humanizer) 的台灣繁體中文在地化版本，以原版 v2.9.1 為基底重寫，不是逐句翻譯。原版依據維基百科的 [Signs of AI writing](https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing) 指南整理出 33 種 AI 寫作模式；本版把它們改編成中文語境的對應形態，加上 5 種只有中文才有的痕跡和 3 種節奏與立場層的痕跡，共 41 種模式。
 
 技能本體是純 Markdown（`SKILL.md`），任何支援 skill 格式的 agent 環境都能用。
 
@@ -15,6 +15,7 @@
 - **AI 詞彙表改用真實中文語料**：不是翻譯英文的 watch words，而是列中文 LLM 輸出實際高頻出現的詞（彰顯、賦能、格局、開啟新篇章……）。
 - **五種中文專屬模式**：中國用語混入（附對照表）、中文標點西化、括號補充濫用、連續重複行、萬用受眾套語。
 - **英文專屬模式在地化**：連字號複合詞濫用（英文限定）換成中文對應的痕跡「四字格與成語堆疊」。
+- **三種節奏與立場模式**：節奏與版面均勻化、情感貼標籤與罐頭意象、假平衡騎牆。詞彙層的痕跡會隨模型更新消退，這幾種比較持久。
 
 原版 v2.9.0 之後的重要機制都有保留：禁止捏造事實（改寫不得加入原文沒有的資訊）、語音校準（提供寫作範本就模仿你的風格）、偵測指引（避免誤判真人寫作）、三種呼叫模式（貼文、檔案、嵌入）。
 
@@ -103,7 +104,7 @@ git clone https://github.com/nagameTW/humanizer-zh-tw.git ~/.claude/skills/human
 - **不改變聊天助理的說話風格**。技能處理的是你交給它的文字；裝了之後 AI 聊天的口吻不會改變。
 - **不捏造內容**。改寫不會加入原文沒有的事實。需要具體細節才能寫好的句子，它會問你，或寫成不含細節的平實版本。
 
-## 38 種模式總覽
+## 41 種模式總覽
 
 | 分類 | 模式 |
 |------|------|
@@ -113,15 +114,17 @@ git clone https://github.com/nagameTW/humanizer-zh-tw.git ~/.claude/skills/human
 | 溝通（20 到 22） | 聊天協作痕跡、知識截止免責與投機補白、諂媚語氣 |
 | 填充與迴避（23 到 33） | 填充片語、過度限定、通用正面結論、四字格堆疊、假權威套語、路標式宣告、標題後贅句、差異敘事、人造金句、格言公式、假坦率開場 |
 | 中文專屬（34 到 38） | 中國用語混入、標點西化、括號補充濫用、連續重複行、萬用受眾套語 |
+| 節奏與立場（39 到 41） | 節奏與版面均勻化、情感貼標籤與罐頭意象、假平衡騎牆 |
 
 每種模式在 `SKILL.md` 裡都有需要注意的詞彙、問題說明和改寫前後範例。
 
 ## English
 
-Humanizer-zh-tw is a Traditional Chinese (Taiwan) adaptation of [blader/humanizer](https://github.com/blader/humanizer), a skill that removes signs of AI-generated writing. It adapts the upstream v2.9.1 pattern catalog to Chinese-language equivalents and adds five Chinese-specific patterns: Simplified-Chinese vocabulary leakage, westernized punctuation, parenthetical overuse, duplicated lines, and universal audience appeals. It also replaces the English-only em dash ban with a rule that distinguishes legitimate Chinese full-width dashes from western-style usage, and enforces CJK punctuation preservation, the most common failure of naive Chinese ports.
+Humanizer-zh-tw is a Traditional Chinese (Taiwan) adaptation of [blader/humanizer](https://github.com/blader/humanizer), a skill that removes signs of AI-generated writing. It adapts the upstream v2.9.1 pattern catalog to Chinese-language equivalents and adds five Chinese-specific patterns: Simplified-Chinese vocabulary leakage, westernized punctuation, parenthetical overuse, duplicated lines, and universal audience appeals. Three further patterns target rhythm and stance: metronomic sentence and layout uniformity, label-style emotion with stock imagery, and false-balance fence-sitting. It also replaces the English-only em dash ban with a rule that distinguishes legitimate Chinese full-width dashes from western-style usage, and enforces CJK punctuation preservation, the most common failure of naive Chinese ports.
 
 ## 版本歷史
 
+- **1.1.0**（2026-07-24）：新增模式 39 到 41（節奏與版面均勻化、情感貼標籤與罐頭意象、假平衡騎牆），偵測指引補充「過度完美」輔助訊號與痕跡持久度的權重指引。
 - **1.0.0**（2026-07-24）：首次發布。以上游 v2.9.1 為基底重寫，38 種模式，加入中文標點保護核心規則與 5 種中文專屬模式。
 
 ## 授權與致謝
