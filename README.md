@@ -35,6 +35,8 @@
 npx skills add nagameTW/humanizer-zh-tw --global
 ```
 
+不指定 `--agent` 時會出現互動選單讓你挑安裝目標；要跳過選單就直接指定，例如 `--agent claude-code`。
+
 更新既有安裝：
 
 ```bash
@@ -93,7 +95,7 @@ git clone https://github.com/nagameTW/humanizer-zh-tw.git ~/.claude/skills/human
 
 ## 支援環境
 
-技能需要一個支援 skill 格式的 agent 環境才能運作，例如 Claude Code、Codex CLI 或其他相容工具。純聊天應用程式（網頁版聊天室、手機 App 的對話介面）沒有技能載入機制，貼上 SKILL.md 內容當提示詞可以充當替代方案，但檔案模式等功能不會生效。
+技能需要一個支援 skill 格式的 agent 環境才能運作，例如 Claude Code、Codex CLI 或其他相容工具。純聊天應用程式（網頁版聊天室、手機 App 的對話介面）沒有技能載入機制；把 SKILL.md 內容貼進對話當提示詞勉強可用，但檔案模式這類功能不會生效。
 
 ## 這個工具不做什麼
 
@@ -127,5 +129,5 @@ Humanizer-zh-tw is a Traditional Chinese (Taiwan) adaptation of [blader/humanize
 MIT 授權。
 
 - 模式目錄與方法論來自 [blader/humanizer](https://github.com/blader/humanizer)（MIT）
-- 簡體中文移植的先行者 [op7418/Humanizer-zh](https://github.com/op7418/Humanizer-zh) 與其 issue 區的社群回報，提供了中文在地化的許多教訓
+- 簡體中文移植的先行者 [op7418/Humanizer-zh](https://github.com/op7418/Humanizer-zh)，其 issue 區的社群回報是本版許多在地化修正的依據
 - 原始資料來源：[Wikipedia: Signs of AI writing](https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing)，由 [WikiProject AI Cleanup](https://en.wikipedia.org/wiki/Wikipedia:WikiProject_AI_Cleanup) 維護
