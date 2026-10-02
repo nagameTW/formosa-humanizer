@@ -1,6 +1,6 @@
 # Humanizer-zh-tw：台灣繁體中文去 AI 味 Skill
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
+[![License](https://img.shields.io/github/license/nagameTW/humanizer-zh-tw?style=flat-square&logo=opensourceinitiative&logoColor=white&color=3DA639)](./LICENSE)
 
 AI 寫的繁體中文常常一眼就認得出來。用戶、視頻這類詞混進來，標點變成半形，句子不是「不僅……更……」就是三個一組。
 
