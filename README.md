@@ -1,10 +1,10 @@
-# Humanizer-zh-tw：台灣繁體中文去 AI 味 Skill
+# Formosa Humanizer：台灣繁體中文去 AI 味 Skill
 
-[![License](https://img.shields.io/github/license/nagameTW/humanizer-zh-tw?style=flat-square&logo=opensourceinitiative&logoColor=white&color=3DA639)](./LICENSE)
+[![License](https://img.shields.io/github/license/nagameTW/formosa-humanizer?style=flat-square&logo=opensourceinitiative&logoColor=white&color=3DA639)](./LICENSE)
 
 AI 寫的繁體中文常常一眼就認得出來。用戶、視頻這類詞混進來，標點變成半形，句子不是「不僅……更……」就是三個一組。
 
-這個 skill 就是拿來把這些痕跡拿掉的。他改自 [blader/humanizer](https://github.com/blader/humanizer)，可是英文版的規則直接翻成中文會出問題，所以我乾脆以原版 v2.9.1 為基底重寫。中文才有的痕跡也補了進去，現在一共 49 種模式。本體是純 Markdown，支援 skill 的 agent 都能用。
+這個 skill 就是拿來把這些痕跡拿掉的。他改自 [blader/humanizer](https://github.com/blader/humanizer)，可是英文版的規則直接翻成中文會出問題，所以我乾脆以原版 v2.9.1 為基底重寫。中文才有的痕跡也補了進去，現在一共 49 種模式。本體是純 Markdown，支援 skill 的 agent 都能用，裝好之後的技能名稱是 `humanizer-zh-tw`。
 
 ## 改寫範例
 
@@ -67,7 +67,7 @@ AI 寫的繁體中文常常一眼就認得出來。用戶、視頻這類詞混�
 ### Claude Code 外掛
 
 ```
-/plugin marketplace add nagameTW/humanizer-zh-tw
+/plugin marketplace add nagameTW/formosa-humanizer
 /plugin install humanizer-zh-tw@humanizer-zh-tw
 ```
 
@@ -76,7 +76,7 @@ AI 寫的繁體中文常常一眼就認得出來。用戶、視頻這類詞混�
 ### Skills CLI（跨環境）
 
 ```bash
-npx skills add nagameTW/humanizer-zh-tw --global
+npx skills add nagameTW/formosa-humanizer --global
 ```
 
 `skills` 會自己找出你裝了哪些 agent（Claude Code、GitHub Copilot 等）裝進去，裝之前會先跑一次第三方安全掃描。檔案實際放在 `~/.agents/skills/`，各家 agent 共用同一份。
@@ -94,7 +94,7 @@ npx skills update humanizer-zh-tw --global
 不想用 `skills` CLI 的話，直接把整個 repo clone 到 agent 放技能的目錄也可以。以 Claude Code 為例：
 
 ```bash
-git clone https://github.com/nagameTW/humanizer-zh-tw.git ~/.claude/skills/humanizer-zh-tw
+git clone https://github.com/nagameTW/formosa-humanizer.git ~/.claude/skills/humanizer-zh-tw
 ```
 
 其他 agent 換成各自的技能目錄就好。記得 clone 整包，只複製 `SKILL.md` 的話，`PATTERNS.md` 和 `references/` 不會跟著過去，SKILL.md 裡的連結會斷掉。裝好之後重開 agent 或重新載入技能。

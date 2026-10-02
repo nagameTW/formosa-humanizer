@@ -34,6 +34,13 @@ repo 建立於 2026-07-24，Google 當時還沒收錄，直接搜 `nagameTW/huma
 3. **在社群發文。** Threads、Facebook 社團、PTT，講清楚差異化賣點：46 種模式（對照組 24 種）、中國用語偵測、中文標點保護，這些都是對照組沒有的。衝 star 沒有捷徑，只能靠這個累積。
 4. **爭取被評測文納入。** 投稿或聯繫 Tenten AI 那類做繁中去 AI 味評測的作者，把本專案納入下一輪比較。
 
+## 2026-10-02 更新
+
+- **改名**：repo 改成 `nagameTW/formosa-humanizer`。查的時候 GitHub 上至少有五個 repo 叫 humanizer-zh-tw（含 -Pro、Better- 變體），網頁搜尋這個名字也排在 kevintsai1202 和 slivenred 後面。名字已經變成通用詞，別人照名字搜會找到別的專案，改成獨特名稱才搜得到。技能名稱維持 `humanizer-zh-tw`。
+- **Search Console 那項做不到**：github.com 的網址無法驗證擁有權。改成從自己的網站寫一篇文章連過來，在自己網站的 Search Console 送索引。
+- **awesome list 已投稿**：VoltAgent/awesome-agent-skills#1142、BehiSecc/awesome-claude-skills#822。
+- **賽道更擠了**：繁中去 AI 味 skill 至少還有 speak-human-tw（約 1k star）、acchuang/zh-tw-humanizer（56 種模式）、tentenco/shuorenhua-zh-tw、aeopress/writing-skills.TW、shyuan/writing-humanizer。
+
 ## 定位建議
 
 與其正面搶「humanizer 繁體中文」這種已經很擠的紅海關鍵字，不如靠獨有功能吃長尾。「中國用語偵測」「中文標點保護」「語域對照」這些字目前競品講得少，本專案的描述和 README 已經佔到，值得在 topics、release notes 一致強化，吃這幾個字的搜尋。
