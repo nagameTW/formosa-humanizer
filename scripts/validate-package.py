@@ -19,6 +19,8 @@ ROOT = Path(__file__).resolve().parent.parent
 SKILL = (ROOT / "SKILL.md").read_text()
 README = (ROOT / "README.md").read_text()
 PLUGIN = json.loads((ROOT / ".claude-plugin" / "plugin.json").read_text())
+MARKETPLACE = json.loads((ROOT / ".claude-plugin" / "marketplace.json").read_text())
+CURSOR = json.loads((ROOT / ".cursor-plugin" / "plugin.json").read_text())
 
 # 行數軟上限：超過只警告。範例已外移到 PATTERNS.md，SKILL 只留規則與偵測要點，
 # 超過此線通常代表範例又混回 SKILL，或有段落該再精簡。
@@ -45,7 +47,7 @@ for nonportable_key in ("compatibility:", "allowed-tools:"):
     if re.search(rf"(?m)^{re.escape(nonportable_key)}", frontmatter):
         fail(f"移除不可攜的 frontmatter key：{nonportable_key[:-1]}")
 
-# --- 版本：SKILL metadata.version / README 版本歷史 / plugin.json 三處一致 ---
+# --- 版本：SKILL metadata.version / README 版本歷史 / 兩份 plugin.json 四處一致 ---
 skill_version = require(
     re.search(r'(?m)^\s+version:\s*["\']([^"\']+)["\']\s*$', frontmatter),
     "SKILL.md 缺 metadata.version",
@@ -57,9 +59,17 @@ readme_version = require(
     "README 缺版本歷史",
 ).group(1)
 
-versions = {skill_version, readme_version, str(PLUGIN.get("version", ""))}
+versions = {
+    skill_version,
+    readme_version,
+    str(PLUGIN.get("version", "")),
+    str(CURSOR.get("version", "")),
+}
 if len(versions) != 1:
-    fail(f"版本不一致：{sorted(versions)}（SKILL / README / plugin.json 需相同）")
+    fail(
+        f"版本不一致：{sorted(versions)}"
+        "（SKILL / README / .claude-plugin / .cursor-plugin 需相同）"
+    )
 
 # --- 模式編號：自動抓，須從 1 連續無跳號無重複 ---
 pattern_numbers = [int(n) for n in re.findall(r"(?m)^### ([0-9]+)\. ", SKILL)]
@@ -104,6 +114,11 @@ if overview_count != pattern_count:
 for label, text in (
     ("SKILL frontmatter", frontmatter),
     ("plugin.json", PLUGIN.get("description", "")),
+    ("cursor plugin.json", CURSOR.get("description", "")),
+    *(
+        (f"marketplace.json {p.get('name', '')}", p.get("description", ""))
+        for p in MARKETPLACE.get("plugins", [])
+    ),
 ):
     m = re.search(r"([0-9]+) 種模式", text)
     if m and int(m.group(1)) != pattern_count:
