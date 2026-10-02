@@ -4,6 +4,10 @@
 
 ## [Unreleased]
 
+### Changed
+
+- repo 改名為 `nagameTW/formosa-humanizer`。至少有五個 repo 也叫 humanizer-zh-tw，照名字搜會找到別人的專案。技能名稱維持 `humanizer-zh-tw`，已安裝的人照常使用。舊網址、`git clone` 與 `npx skills add` 都會自動轉到新位置
+
 ## [1.7.0] - 2026-10-02
 
 參照上游 blader/humanizer v3.1.0 補強。上游 3.0.0 把模式合併重編成 25 種，這裡不跟著重編，因為編號已經用在 README、PATTERNS.md 與各處交叉引用，新模式接在尾端。

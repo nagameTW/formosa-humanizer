@@ -7,8 +7,8 @@
     "name": "nagameTW",
     "url": "https://github.com/nagameTW"
   },
-  "homepage": "https://github.com/nagameTW/humanizer-zh-tw",
-  "repository": "https://github.com/nagameTW/humanizer-zh-tw",
+  "homepage": "https://github.com/nagameTW/formosa-humanizer",
+  "repository": "https://github.com/nagameTW/formosa-humanizer",
   "license": "MIT",
   "keywords": ["writing", "editing", "ai-writing", "humanize", "prose", "style", "chinese", "traditional-chinese", "zh-tw", "taiwan"]
 }
