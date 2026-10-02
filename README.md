@@ -1,10 +1,10 @@
-# Formosa Humanizer：台灣繁體中文去 AI 味 Skill
+# Formosa Humanizer
 
 [![License](https://img.shields.io/github/license/nagameTW/formosa-humanizer?style=flat-square&logo=opensourceinitiative&logoColor=white&color=3DA639)](./LICENSE)
 
 AI 寫的繁體中文常常一眼就認得出來。用戶、視頻這類詞混進來，標點變成半形，句子不是「不僅……更……」就是三個一組。
 
-這個 skill 就是拿來把這些痕跡拿掉的。他改自 [blader/humanizer](https://github.com/blader/humanizer)，可是英文版的規則直接翻成中文會出問題，所以我乾脆以原版 v2.9.1 為基底重寫。中文才有的痕跡也補了進去，現在一共 49 種模式。本體是純 Markdown，支援 skill 的 agent 都能用，裝好之後的技能名稱是 `humanizer-zh-tw`。
+這個 skill 就是拿來去 AI 味的。他改自 [blader/humanizer](https://github.com/blader/humanizer)，可是英文版的規則直接翻成中文會出問題，所以我乾脆以原版 v2.9.1 為基底重寫。中文才有的痕跡也補了進去，現在一共 49 種模式。本體是純 Markdown，支援 skill 的 agent 都能用，裝好之後的技能名稱是 `humanizer-zh-tw`。
 
 ## 改寫範例
 
