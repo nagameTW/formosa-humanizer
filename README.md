@@ -4,7 +4,7 @@
 
 AI 寫的繁體中文常常一眼就認得出來。用戶、視頻這類詞混進來，標點變成半形，句子不是「不僅……更……」就是三個一組。
 
-這個 skill 就是拿來把這些痕跡拿掉的。它改自 [blader/humanizer](https://github.com/blader/humanizer)，可是英文版的規則直接翻成中文會出問題，所以我乾脆以原版 v2.9.1 為基底重寫。中文才有的痕跡也補了進去，現在一共 46 種模式。本體是純 Markdown，支援 skill 的 agent 都能用。
+這個 skill 就是拿來把這些痕跡拿掉的。他改自 [blader/humanizer](https://github.com/blader/humanizer)，可是英文版的規則直接翻成中文會出問題，所以我乾脆以原版 v2.9.1 為基底重寫。中文才有的痕跡也補了進去，現在一共 46 種模式。本體是純 Markdown，支援 skill 的 agent 都能用。
 
 ## 改寫範例
 
@@ -15,7 +15,7 @@ AI 寫的繁體中文常常一眼就認得出來。用戶、視頻這類詞混�
 | 問題從來不是「不完整」。這套工具能真正「賦能」你的團隊，帶來「質」的飛躍。 | 問題不在完整不完整。這套工具能實際幫上團隊，讓成果明顯不一樣。 |
 | 這個功能還不穩定,建議先在測試環境驗證.確認沒問題後再上線? | 這個功能還不穩定，建議先在測試環境驗證。確認沒問題後再上線嗎？ |
 
-它只拿掉明顯的 AI 習慣，原文沒寫的東西不會幫你補。每種模式的前後對照都放在 [PATTERNS.md](PATTERNS.md)。
+他只拿掉明顯的 AI 習慣，原文沒寫的東西不會幫你補。每種模式的前後對照都放在 [PATTERNS.md](PATTERNS.md)。
 
 <details>
 <summary>完整範例：一篇簡體中文的 AI 文章改成台灣繁中</summary>
@@ -123,7 +123,7 @@ git clone https://github.com/nagameTW/humanizer-zh-tw.git ~/.claude/skills/human
 
 ### 照你的文風改
 
-如果希望改完像你自己寫的，先丟一段你寫過的東西給它：
+如果希望改完像你自己寫的，先丟一段你寫過的東西給他：
 
 ```
 /humanizer-zh-tw
@@ -135,7 +135,7 @@ git clone https://github.com/nagameTW/humanizer-zh-tw.git ~/.claude/skills/human
 ［貼上要處理的 AI 文字］
 ```
 
-它會看你的句子長短、用詞和標點習慣，照著你的習慣改。範本優先於技能本身的規則，像你平常就愛用破折號的話，它會留著。只有半形標點例外。你習慣用空格斷句沒問題，但中文句子裡不會出現半形逗號、句號。
+他會看你的句子長短、用詞和標點習慣，照著你的習慣改。範本優先於技能本身的規則，像你平常就愛用破折號的話，他會留著。只有半形標點例外。你習慣用空格斷句沒問題，但中文句子裡不會出現半形逗號、句號。
 
 ## 46 種模式總覽
 
@@ -177,10 +177,10 @@ git clone https://github.com/nagameTW/humanizer-zh-tw.git ~/.claude/skills/human
 
 ## 這個工具不做什麼
 
-- **不生成內容**：它只負責改寫。你給它一段寫好的文字，它去掉 AI 味還你，不會擴寫、不補建議，也不會幫你多生一段出來。
+- **不生成內容**：他只負責改寫。你給他一段寫好的文字，他去掉 AI 味還你，不會擴寫、不補建議，也不會幫你多生一段出來。
 - **不是拿來繞過 AI 偵測器的**：目標是讓人讀起來自然，不保證能過 GPTZero、朱雀這類統計式偵測器。上游專案的立場也一樣。
-- **不會改變聊天助理的口氣**：它只處理你交給它的文字，裝了之後 AI 跟你聊天的語氣不會變。
-- **不捏造內容**：原文沒有的事實不會加進去。句子需要具體細節才寫得好的話，它會問你，或寫成不含細節的平實版本。
+- **不會改變聊天助理的口氣**：他只處理你交給他的文字，裝了之後 AI 跟你聊天的語氣不會變。
+- **不捏造內容**：原文沒有的事實不會加進去。句子需要具體細節才寫得好的話，他會問你，或寫成不含細節的平實版本。
 
 ## 版本歷史
 
@@ -191,6 +191,6 @@ git clone https://github.com/nagameTW/humanizer-zh-tw.git ~/.claude/skills/human
 MIT 授權。
 
 - 模式目錄與方法論來自 [blader/humanizer](https://github.com/blader/humanizer)（MIT）
-- 簡體中文移植的先行者 [op7418/Humanizer-zh](https://github.com/op7418/Humanizer-zh)，它 issue 區的社群回報是這版很多在地化修正的依據
+- 簡體中文移植的先行者 [op7418/Humanizer-zh](https://github.com/op7418/Humanizer-zh)，他的 issue 區的社群回報是這版很多在地化修正的依據
 - 原始資料來源：[Wikipedia: Signs of AI writing](https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing)，由 [WikiProject AI Cleanup](https://en.wikipedia.org/wiki/Wikipedia:WikiProject_AI_Cleanup) 維護
 - 中國用語對照參考教育部《重訂國語辭典》「大陸地區語詞對照表」附錄，以及 [g0v/moedict-data-csld](https://github.com/g0v/moedict-data-csld) 兩岸差異詞語開放資料
