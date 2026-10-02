@@ -2,7 +2,7 @@
 
 [![License](https://img.shields.io/github/license/nagameTW/formosa-humanizer?style=flat-square&logo=opensourceinitiative&logoColor=white&color=3DA639)](./LICENSE)
 
-AI 寫的繁體中文常常一眼就認得出來。用戶、視頻這類詞混進來，標點變成半形，句子不是「不僅……更……」就是三個一組。
+AI 寫的中文常常一眼就認得出來。用戶、視頻這類詞混進來，標點變成半形，句子不是「不僅……更……」就是三個一組。
 
 這個 skill 就是拿來去 AI 味的。他改自 [blader/humanizer](https://github.com/blader/humanizer)，可是英文版的規則直接翻成中文會出問題，所以我乾脆以原版 v2.9.1 為基底重寫。中文才有的痕跡也補了進去，現在一共 49 種模式。本體是純 Markdown，支援 skill 的 agent 都能用，裝好之後的技能名稱是 `humanizer-zh-tw`。
 
@@ -18,7 +18,7 @@ AI 寫的繁體中文常常一眼就認得出來。用戶、視頻這類詞混�
 他只拿掉明顯的 AI 習慣，原文沒寫的東西不會幫你補。每種模式的前後對照都放在 [PATTERNS.md](PATTERNS.md)。
 
 <details>
-<summary>完整範例：一篇簡體中文的 AI 文章改成台灣繁中</summary>
+<summary>完整範例：一篇簡體的 AI 文章改完的樣子</summary>
 
 改寫前：
 

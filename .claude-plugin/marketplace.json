@@ -10,7 +10,7 @@
     {
       "name": "humanizer-zh-tw",
       "source": "./",
-      "description": "去除 AI 寫作痕跡的繁體中文（台灣）在地化版本，基於 blader/humanizer，共 49 種模式。",
+      "description": "把 AI 寫的中文改得像人寫的。改自 blader/humanizer，照台灣用語和中文標點重寫，共 49 種模式。",
       "license": "MIT",
       "keywords": ["writing", "editing", "ai-writing", "humanize", "prose", "style", "chinese", "traditional-chinese", "zh-tw", "taiwan"]
     }

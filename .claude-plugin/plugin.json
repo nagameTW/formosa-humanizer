@@ -1,7 +1,7 @@
 {
   "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
   "name": "humanizer-zh-tw",
-  "description": "去除文字中的 AI 生成痕跡，讓繁體中文讀起來更自然、更像真人書寫。基於 blader/humanizer，針對台灣繁體中文在地化，共 49 種模式。",
+  "description": "把 AI 寫的中文改得像人寫的。改自 blader/humanizer，照台灣用語和中文標點重寫，共 49 種模式。",
   "version": "1.7.0",
   "author": {
     "name": "nagameTW",
