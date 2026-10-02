@@ -12,7 +12,7 @@
       "source": "./",
       "description": "去除 AI 寫作痕跡的繁體中文（台灣）在地化版本，基於 blader/humanizer v2.9.1，共 46 種模式。",
       "license": "MIT",
-      "keywords": ["writing", "editing", "ai-detection", "humanize", "prose", "style", "chinese", "traditional-chinese", "zh-tw", "taiwan"]
+      "keywords": ["writing", "editing", "ai-writing", "humanize", "prose", "style", "chinese", "traditional-chinese", "zh-tw", "taiwan"]
     }
   ]
 }
