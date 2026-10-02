@@ -184,7 +184,7 @@ git clone https://github.com/nagameTW/humanizer-zh-tw.git ~/.claude/skills/human
 
 ## 版本歷史
 
-- **1.6.3**（2026-10-02）：目前版本。各版改了什麼見 [CHANGELOG.md](CHANGELOG.md)。
+- **1.6.4**（2026-10-02）：目前版本。各版改了什麼見 [CHANGELOG.md](CHANGELOG.md)。
 
 ## 授權與致謝
 
