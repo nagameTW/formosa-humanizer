@@ -27,7 +27,11 @@
 - `.claude-plugin/plugin.json` — Claude Code 外掛 manifest，含 `version`。
 - `.claude-plugin/marketplace.json` — 單一 repo 的 marketplace 進入點；**刻意
   不放 version**，讓 `plugin.json` 當套件版本的唯一來源。
+- `.cursor-plugin/plugin.json` — Cursor 外掛 manifest，含 `version`，內容與
+  `.claude-plugin/plugin.json` 保持一致。
 - `scripts/validate-package.py` — 無外部相依的同步檢查，本地與 CI 都跑。
+- `.github/workflows/validate.yml` — PR 與 push 到 main 時跑上述三項驗證。
+- `.github/ISSUE_TEMPLATE/` — 「新的 AI 痕跡」與「改寫出問題」兩種 issue 範本。
 
 ## 維護契約（改東西前先讀）
 
@@ -37,11 +41,12 @@
 - **模式：** 新增、刪除或重編號任何模式時，同一次要更新 SKILL.md 的偵測要點與
   指標、PATTERNS.md 對應編號的範例（兩檔模式編號必須完全一致，validate 會擋）、
   README 的「N 種模式總覽」標題數字與總覽表對應分類列、SKILL frontmatter
-  description 與 plugin.json description 裡的「N 種模式」、以及所有交叉引用
+  description、兩份 plugin.json 與 marketplace.json description 裡的「N 種模式」、以及所有交叉引用
   （「見模式 X」）。編號從 1 連續，非必要不重編。改動模式 34 的中國用語詞條時，
   詞表在 `references/zh-cn-glossary.md`，改那裡；SKILL.md 模式 34 只留指標，不放表。
-- **版本：** 版本存在三處——SKILL frontmatter 的 `metadata.version`、README
-  版本歷史、plugin.json 的 `version`。一起 bump。版本放在 `metadata` 底下；
+- **版本：** 版本存在四處：SKILL frontmatter 的 `metadata.version`、README
+  版本歷史、`.claude-plugin/plugin.json` 與 `.cursor-plugin/plugin.json` 的
+  `version`。一起 bump。版本放在 `metadata` 底下；
   **top-level `version` key 不可攜**，別用。marketplace.json 不放 version。
   版本號依 SemVer：新增模式或規則是 MINOR，修正是 PATCH。
 - **相容性：** 安裝與使用的措辭保持 harness 中立。技能應能在任何載得動 Markdown

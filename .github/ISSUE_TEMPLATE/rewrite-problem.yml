@@ -1,0 +1,45 @@
+name: 改寫出問題
+description: 痕跡沒改掉、意思被改了、加了或弄丟了事實，或改了不該改的地方。
+labels: ["bug"]
+body:
+  - type: dropdown
+    id: problem
+    attributes:
+      label: 哪裡出問題
+      options:
+        - 改寫後還留著 AI 痕跡
+        - 改寫加了或弄丟了事實
+        - 改了原本沒問題的地方
+        - 標點或台灣用語被改錯
+        - 其他
+    validations:
+      required: true
+  - type: textarea
+    id: input
+    attributes:
+      label: 輸入的文字
+      description: 你交給技能的原文。私人資訊請先拿掉。
+    validations:
+      required: true
+  - type: textarea
+    id: call
+    attributes:
+      label: 怎麼呼叫的
+      description: 用的 agent、模型，以及你下的提示詞。
+      placeholder: "Claude Code、Opus 5.5：/humanizer-zh-tw 之後貼上文字"
+    validations:
+      required: true
+  - type: textarea
+    id: output
+    attributes:
+      label: 輸出
+      description: 技能改出來的結果。
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: 應該怎麼改
+      description: 引用改錯的那句，寫出你覺得自然的寫法。知道是哪個模式的話也寫上編號。
+    validations:
+      required: true
