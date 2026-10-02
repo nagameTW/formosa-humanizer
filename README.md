@@ -79,7 +79,7 @@ AI 寫的繁體中文常常一眼就認得出來。用戶、視頻這類詞混�
 npx skills add nagameTW/humanizer-zh-tw --global
 ```
 
-`skills` 會偵測你環境裡的 agent（Claude Code、GitHub Copilot 等）自動安裝，並在安裝前跑一次第三方安全掃描。技能本體放在 `~/.agents/skills/`，各 agent 以 symlink 指過去共用同一份。
+`skills` 會自己找出你裝了哪些 agent（Claude Code、GitHub Copilot 等）裝進去，裝之前會先跑一次第三方安全掃描。檔案實際放在 `~/.agents/skills/`，各家 agent 共用同一份。
 
 更新既有安裝：
 
@@ -135,7 +135,7 @@ git clone https://github.com/nagameTW/humanizer-zh-tw.git ~/.claude/skills/human
 ［貼上要處理的 AI 文字］
 ```
 
-他會看你的句子長短、用詞和標點習慣，照著你的習慣改。範本優先於技能本身的規則，像你平常就愛用破折號的話，他會留著。只有半形標點例外。你習慣用空格斷句沒問題，但中文句子裡不會出現半形逗號、句號。
+他會看你的句子長短、用詞和標點習慣，照著你的習慣改。有你的範本時，以你的寫法為主，像你平常就愛用破折號的話，他會留著。只有半形標點例外。你習慣用空格斷句沒問題，但中文句子裡不會出現半形逗號、句號。
 
 ## 46 種模式總覽
 
