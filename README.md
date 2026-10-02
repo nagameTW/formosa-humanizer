@@ -2,10 +2,6 @@
 
 [![License](https://img.shields.io/github/license/nagameTW/formosa-humanizer?style=flat-square&logo=opensourceinitiative&logoColor=white&color=3DA639)](./LICENSE)
 
-把 AI 寫的中文改得像人寫的。
-
-這是 [blader/humanizer](https://github.com/blader/humanizer) 的中文版。英文版的規則直接套在中文上會出錯，像是把「」改成英文引號。所以我照中文的情況重寫了一份，也補上中國用語、半形標點這類中文才有的問題。
-
 ## 改寫範例
 
 | 改寫前 | 改寫後 |
