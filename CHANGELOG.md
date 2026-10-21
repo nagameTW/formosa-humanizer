@@ -10,6 +10,15 @@
 - README 標題拿掉「台灣繁體中文去 AI 味 Skill」副標。那是一串關鍵字，不像人會講的話，而且當初加副標是為了跟同名專案區隔，改名後已經不需要
 - README、外掛描述與 Codex 介面的說明少講「繁體中文」，平常講「中文」就好。只在真的有差的地方（台灣用語、中文標點）才點出來
 - README 拿掉開頭的介紹段落，標題底下直接接改寫範例。上游出處、重寫原因、模式數、支援環境在後面的章節都有
+- README 標題下補回一句定位，講明英文原版和簡中版的規則都不是為繁中寫的。拿掉整段介紹後，第一次來的人要捲到「為什麼不直接翻譯英文版」才知道跟其他版本差在哪
+- README「支援環境」補上 Claude.ai 和 Claude Desktop。這兩個已經能上傳技能，原本「網頁版沒有載入技能的機制」的說法不對了
+- README 結尾加「回饋」一節，邀請按星和回報問題
+
+### Added
+
+- README 安裝新增「Claude.ai 或 Claude Desktop」，給不用 CLI 的人照著上傳
+- `.github/workflows/release-zip.yml`：發 release 時打包 `humanizer-zh-tw.zip` 掛上去。Claude 的上傳格式要求資料夾名稱等於技能名稱，GitHub 內建的 Download ZIP 不符合
+- `.gitattributes`：GitHub 原本因為驗證腳本把 repo 標成 Python，改成以 Markdown 計
 
 ## [1.7.0] - 2026-10-02
 

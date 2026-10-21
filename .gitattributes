@@ -1,0 +1,3 @@
+# 技能本體是 Markdown，驗證腳本不算。讓 GitHub 的語言標示顯示 Markdown 而不是 Python。
+*.md linguist-detectable=true
+*.py linguist-detectable=false
