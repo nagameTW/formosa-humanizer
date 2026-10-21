@@ -31,6 +31,9 @@
   `.claude-plugin/plugin.json` 保持一致。
 - `scripts/validate-package.py` — 無外部相依的同步檢查，本地與 CI 都跑。
 - `.github/workflows/validate.yml` — PR 與 push 到 main 時跑上述三項驗證。
+- `.github/workflows/release-zip.yml` — 發 release 時打包 `humanizer-zh-tw.zip`
+  （SKILL.md、PATTERNS.md、references/、LICENSE、NOTICE）掛到 release，給 Claude.ai
+  上傳用。技能新增需要隨附的檔案時，記得也加進打包清單。
 - `.github/ISSUE_TEMPLATE/` — 「新的 AI 痕跡」與「改寫出問題」兩種 issue 範本。
 
 ## 維護契約（改東西前先讀）
