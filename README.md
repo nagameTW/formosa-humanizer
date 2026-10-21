@@ -2,6 +2,8 @@
 
 [![License](https://img.shields.io/github/license/nagameTW/formosa-humanizer?style=flat-square&logo=opensourceinitiative&logoColor=white&color=3DA639)](./LICENSE)
 
+把 AI 寫的中文改得像台灣人寫的。英文原版 [blader/humanizer](https://github.com/blader/humanizer) 和簡中版的規則都不是為繁中寫的，這版照台灣用語和中文標點從頭改過，會抓出混進來的中國用語，也不會把「」換成英文引號。
+
 ## 改寫範例
 
 | 改寫前 | 改寫後 |
@@ -68,6 +70,16 @@
 ```
 
 安裝後以 `/humanizer-zh-tw:humanizer-zh-tw` 呼叫。
+
+### Claude.ai 或 Claude Desktop
+
+不用開終端機，網頁版和桌面版都能裝。需要付費方案（Pro、Max、Team 或 Enterprise），而且要開啟程式碼執行功能。
+
+1. 下載 [humanizer-zh-tw.zip](https://github.com/nagameTW/formosa-humanizer/releases/latest/download/humanizer-zh-tw.zip)，不用解壓縮。
+2. 到 [Customize > Skills](https://claude.ai/customize/skills) 上傳這個 ZIP，上傳後記得打開。
+3. 開新對話，說「幫我把這段文字去掉 AI 味」再貼上文字。
+
+請用上面這個連結，不要用 GitHub 綠色按鈕的「Download ZIP」。那包解開的資料夾叫 `formosa-humanizer-main`，Claude 要求資料夾名稱跟技能名稱一樣。
 
 ### Skills CLI（跨環境）
 
@@ -172,7 +184,7 @@ git clone https://github.com/nagameTW/formosa-humanizer.git ~/.claude/skills/hum
 
 ## 支援環境
 
-要在支援 skill 的 agent 環境裡才跑得動，像 Claude Code、Codex CLI 或其他相容的工具。網頁版或手機 App 的聊天介面沒有載入技能的機制，硬要用的話可以把 SKILL.md 整份貼進對話當提示詞，勉強能用，但檔案模式這類功能就不會動。
+要在支援 skill 的環境裡才跑得動，像 Claude Code、Codex CLI 這類 agent，或是上傳到 Claude.ai、Claude Desktop（見「安裝」）。其他沒有載入技能機制的聊天介面，硬要用的話可以把 SKILL.md 整份貼進對話當提示詞，勉強能用，但檔案模式這類功能就不會動。
 
 ## 這個工具不做什麼
 
@@ -193,3 +205,7 @@ MIT 授權。
 - 簡體中文移植的先行者 [op7418/Humanizer-zh](https://github.com/op7418/Humanizer-zh)，他的 issue 區的社群回報是這版很多在地化修正的依據
 - 原始資料來源：[Wikipedia: Signs of AI writing](https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing)，由 [WikiProject AI Cleanup](https://en.wikipedia.org/wiki/Wikipedia:WikiProject_AI_Cleanup) 維護
 - 中國用語對照參考教育部《重訂國語辭典》「大陸地區語詞對照表」附錄，以及 [g0v/moedict-data-csld](https://github.com/g0v/moedict-data-csld) 兩岸差異詞語開放資料
+
+## 回饋
+
+覺得有用的話，給個星星能讓更多人找到這個專案。遇到沒抓到的 AI 痕跡，或改壞的句子，歡迎[開 issue](https://github.com/nagameTW/formosa-humanizer/issues/new/choose) 告訴我。

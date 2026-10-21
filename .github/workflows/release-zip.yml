@@ -1,0 +1,38 @@
+name: Release ZIP
+
+# 打包成 Claude.ai／Claude Desktop 可上傳的 ZIP，掛到 release 上。
+# 上傳格式要求 ZIP 裡的資料夾名稱等於 SKILL.md 的 name，
+# GitHub 內建的 Download ZIP 是 formosa-humanizer-<ref>/，對不上。
+
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 要補上 ZIP 的 release tag，例如 v1.7.0
+        required: true
+
+permissions:
+  contents: write
+
+jobs:
+  zip:
+    runs-on: ubuntu-latest
+    env:
+      TAG: ${{ github.event.release.tag_name || inputs.tag }}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+        with:
+          ref: ${{ env.TAG }}
+      - name: Build skill ZIP
+        run: |
+          mkdir -p dist/humanizer-zh-tw
+          cp -r SKILL.md PATTERNS.md references LICENSE NOTICE dist/humanizer-zh-tw/
+          cd dist
+          zip -r humanizer-zh-tw.zip humanizer-zh-tw
+          unzip -l humanizer-zh-tw.zip
+      - name: Upload to release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh release upload "$TAG" dist/humanizer-zh-tw.zip --clobber --repo "$GITHUB_REPOSITORY"
