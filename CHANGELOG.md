@@ -6,6 +6,7 @@
 
 ### Changed
 
+- README 縮短成新使用者決定、安裝與使用所需的內容，其餘搬到 `docs/`：安裝細節（`install.md`）、文風校準（`usage.md`）、完整改寫範例（`example.md`）、與英文原版的差異（`design.md`）。標題改為顯示名稱 Formosa Humanizer，並加上 CI 與授權標章、專案結構與開發兩節
 - repo 改名為 `nagameTW/formosa-humanizer`。至少有五個 repo 也叫 humanizer-zh-tw，照名字搜會找到別人的專案。技能名稱維持 `humanizer-zh-tw`，已安裝的人照常使用。舊網址、`git clone` 與 `npx skills add` 都會自動轉到新位置
 - README 標題拿掉「台灣繁體中文去 AI 味 Skill」副標。那是一串關鍵字，不像人會講的話，而且當初加副標是為了跟同名專案區隔，改名後已經不需要
 - README、外掛描述與 Codex 介面的說明少講「繁體中文」，平常講「中文」就好。只在真的有差的地方（台灣用語、中文標點）才點出來
