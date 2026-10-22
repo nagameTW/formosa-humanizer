@@ -8,7 +8,7 @@
 
 把 AI 寫的中文改得像台灣人寫的。英文原版 [blader/humanizer](https://github.com/blader/humanizer) 和簡中版的規則都不是為繁中寫的，本版照台灣用語和中文標點從頭改過。他會找出混進文字裡的中國用語，也不會把「」換成英文引號。與原版的差異見 [docs/design.md](docs/design.md)。
 
-他只拿掉明顯的 AI 習慣，不補原文沒寫的內容。適用於載得動 skill 的環境，例如 Claude Code、Codex CLI、Claude.ai 與 Claude Desktop。其他聊天介面可以把 `SKILL.md` 整份貼進對話當提示詞，但檔案模式不會運作。
+他只拿掉明顯的 AI 習慣，不補原文沒寫的內容。適用於能載入 skill 的環境，例如 Claude Code、Codex CLI、Claude.ai 與 Claude Desktop。其他聊天介面可以把 `SKILL.md` 整份貼進對話當提示詞，但檔案模式不會運作。
 
 ## 改寫範例
 
@@ -34,7 +34,7 @@
 
 ### Claude.ai 或 Claude Desktop
 
-需要付費方案（Pro、Max、Team 或 Enterprise），並開啟程式碼執行功能。
+不需要終端機，網頁版與桌面版都能安裝。需要付費方案（Pro、Max、Team 或 Enterprise），並開啟程式碼執行功能。
 
 1. 下載 [humanizer-zh-tw.zip](https://github.com/nagameTW/formosa-humanizer/releases/latest/download/humanizer-zh-tw.zip)，不用解壓縮。
 2. 到 [Customize > Skills](https://claude.ai/customize/skills) 上傳這個 ZIP，並打開。
@@ -48,7 +48,7 @@
 npx skills add nagameTW/formosa-humanizer --global
 ```
 
-更新與手動安裝見 [docs/install.md](docs/install.md)。
+一次裝進本機偵測到的各個 agent，例如 Claude Code 與 GitHub Copilot。更新與手動安裝見 [docs/install.md](docs/install.md)。
 
 ## 使用
 
@@ -58,7 +58,7 @@ npx skills add nagameTW/formosa-humanizer --global
 ［貼上要處理的文字］
 ```
 
-也可以用自然語言，例如「幫我把這段文字去掉 AI 味：［文字］」。指向檔案時，他就地改寫，只動散文，程式碼區塊和 frontmatter 不碰。例如「幫我把 docs/announcement.md 去 AI 味」。
+也可以用自然語言，例如「幫我把這段文字去掉 AI 味：［文字］」。指向檔案時，他改寫該檔案本身，只動散文，程式碼區塊和 frontmatter 不碰。例如「幫我把 docs/announcement.md 去 AI 味」。
 
 若要貼近自己的文風，先提供寫作範本，見 [docs/usage.md](docs/usage.md)。
 
@@ -87,7 +87,7 @@ npx skills add nagameTW/formosa-humanizer --global
 - 不改變聊天助理的口氣。他只處理交給他的文字，安裝後 AI 的聊天語氣不變。
 - 不捏造內容。原文沒有的事實不會加入。若句子需要具體細節，他會詢問，或寫成不含細節的平實版本。
 
-## 版本
+## 版本歷史
 
 - **1.7.0**（2026-10-02）：目前版本。各版的變更見 [CHANGELOG.md](CHANGELOG.md)。
 
@@ -126,13 +126,13 @@ python3 scripts/validate-package.py
 
 ## 回饋
 
-覺得有用的話，歡迎給個星星。遇到沒抓到的 AI 痕跡，或改壞的句子，請[開 issue](https://github.com/nagameTW/formosa-humanizer/issues/new/choose)。
+覺得有用的話，給個星星能讓更多人找到這個專案。遇到沒抓到的 AI 痕跡，或改壞的句子，請[開 issue](https://github.com/nagameTW/formosa-humanizer/issues/new/choose)。
 
 ## 授權與致謝
 
 MIT 授權。
 
 - 模式目錄與方法論來自 [blader/humanizer](https://github.com/blader/humanizer)（MIT）。
-- 簡體中文移植的先行者 [op7418/Humanizer-zh](https://github.com/op7418/Humanizer-zh)。他的 issue 區的社群回報，是本版許多在地化修正的依據。
+- 簡體中文移植的先行者 [op7418/Humanizer-zh](https://github.com/op7418/Humanizer-zh)。該專案 issue 區的社群回報，是本版許多在地化修正的依據。
 - 原始資料來源：[Wikipedia: Signs of AI writing](https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing)，由 [WikiProject AI Cleanup](https://en.wikipedia.org/wiki/Wikipedia:WikiProject_AI_Cleanup) 維護。
 - 中國用語對照參考教育部《重訂國語辭典》「大陸地區語詞對照表」附錄，以及 [g0v/moedict-data-csld](https://github.com/g0v/moedict-data-csld) 的兩岸差異詞語開放資料。
