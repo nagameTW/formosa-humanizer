@@ -1,8 +1,14 @@
-# Formosa Humanizer
+<div align="center">
+  <h1>Formosa Humanizer</h1>
+  <p>
+    <a href="https://github.com/nagameTW/formosa-humanizer/actions/workflows/validate.yml"><img src="https://github.com/nagameTW/formosa-humanizer/actions/workflows/validate.yml/badge.svg" alt="CI"></a>
+    <a href="./LICENSE"><img src="https://img.shields.io/github/license/nagameTW/formosa-humanizer?style=flat-square&logo=opensourceinitiative&logoColor=white&color=3DA639" alt="License"></a>
+  </p>
+</div>
 
-[![License](https://img.shields.io/github/license/nagameTW/formosa-humanizer?style=flat-square&logo=opensourceinitiative&logoColor=white&color=3DA639)](./LICENSE)
+把 AI 寫的中文改得像台灣人寫的。英文原版 [blader/humanizer](https://github.com/blader/humanizer) 和簡中版的規則都不是為繁中寫的，本版照台灣用語和中文標點從頭改過。他會找出混進文字裡的中國用語，也不會把「」換成英文引號。與原版的差異見 [docs/design.md](docs/design.md)。
 
-把 AI 寫的中文改得像台灣人寫的。英文原版 [blader/humanizer](https://github.com/blader/humanizer) 和簡中版的規則都不是為繁中寫的，這版照台灣用語和中文標點從頭改過，會抓出混進來的中國用語，也不會把「」換成英文引號。
+他只拿掉明顯的 AI 習慣，不補原文沒寫的內容。適用於載得動 skill 的環境，例如 Claude Code、Codex CLI、Claude.ai 與 Claude Desktop。其他聊天介面可以把 `SKILL.md` 整份貼進對話當提示詞，但檔案模式不會運作。
 
 ## 改寫範例
 
@@ -13,52 +19,7 @@
 | 問題從來不是「不完整」。這套工具能真正「賦能」你的團隊，帶來「質」的飛躍。 | 問題不在完整不完整。這套工具能實際幫上團隊，讓成果明顯不一樣。 |
 | 這個功能還不穩定,建議先在測試環境驗證.確認沒問題後再上線? | 這個功能還不穩定，建議先在測試環境驗證。確認沒問題後再上線嗎？ |
 
-他只拿掉明顯的 AI 習慣，原文沒寫的東西不會幫你補。每種模式的前後對照都放在 [PATTERNS.md](PATTERNS.md)。
-
-<details>
-<summary>完整範例：一篇簡體的 AI 文章改完的樣子</summary>
-
-改寫前：
-
-> **为什么睡眠对大脑很重要？**
->
-> 睡眠不仅是身体休息的过程，更是大脑进行「维护、修复与升级」的关键阶段。越来越多的神经科学研究表明，良好的睡眠质量直接影响学习能力、记忆力、情绪稳定以及长期脑健康。重视睡眠，并非一种生活方式的选择，而是维护认知能力和整体健康的重要基础。
->
-> **一、睡眠帮助巩固记忆**
-> 白天学习到的新知识，并不会立即成为长期记忆。睡眠过程中，大脑会对重要信息进行筛选、整理和强化，将短期记忆逐渐转化为长期记忆。因此，充足睡眠不仅有助于提高学习效率，也能增强解决问题和创新思考的能力。
->
-> **二、睡眠促进「大脑清洁」**
-> 研究发现，在睡眠尤其是深度睡眠阶段，大脑的「类淋巴系统」会更加活跃，加快代谢废物的清除，包括 β 淀粉样蛋白等物质。部分研究显示，这一系统在睡眠时的清除效率明显高于清醒状态，有助于维持神经系统的正常功能，并可能与降低某些神经退行性疾病风险相关。
->
-> **三、睡眠影响情绪与决策能力**
-> 长期睡眠不足会削弱前额叶皮层对情绪的调节能力，使人更容易焦虑、冲动和注意力分散。研究表明，成年人若连续多日睡眠不足 6 小时，认知表现、反应速度和判断能力都会出现明显下降，甚至接近酒精摄入后的水平。
->
-> **四、睡眠是大脑长期健康的保障**
-> 规律、充足的睡眠有助于维持神经元之间的高效连接，促进脑细胞修复和能量恢复，为大脑保持良好的学习能力、专注力和适应能力提供持续支持。
->
-> 睡眠不是浪费时间，而是大脑最高效的「投资」。每一个安稳的夜晚，都在悄然塑造第二天的思维状态，也在积累未来的认知储备。珍惜睡眠，就是珍惜大脑的潜能，也是为健康、专注与长远发展打下坚实基础。
-
-改寫後：
-
-> **為什麼睡眠對大腦很重要**
->
-> 睡覺不只是讓身體休息，大腦也趁這段時間整理和修復自己。睡眠品質會直接影響學習、記憶、情緒，以及長期的大腦健康。以下是幾個目前研究上比較清楚的機制：
->
-> **一、鞏固記憶**
-> 白天學到的新東西不會馬上變成長期記憶。睡眠時，大腦會把重要的資訊篩選、整理、強化，慢慢從短期記憶轉成長期記憶，所以睡飽有助於學習和思考。
->
-> **二、清除代謝廢物**
-> 深度睡眠時，大腦的類淋巴系統會變得活躍，加快清除代謝廢物，包括 β 澱粉樣蛋白。研究顯示這套系統在睡眠時的清除效率比清醒時高，可能和降低某些神經退化疾病的風險有關。
->
-> **三、穩定情緒和判斷**
-> 長期睡不夠會削弱前額葉皮質調節情緒的能力，讓人比較容易焦慮、衝動、分心。有研究指出，成年人連續幾天睡不到六小時，反應速度和判斷力會明顯下降，程度接近喝了酒。
->
-> **四、維持長期腦健康**
-> 規律又足夠的睡眠有助於維持神經元之間的連接，讓腦細胞有時間修復、恢復能量。
->
-> 睡眠不是浪費時間。前一晚睡得好不好，隔天的思路、專注、反應都感覺得出來。
-
-</details>
+一篇完整文章的改寫見 [docs/example.md](docs/example.md)，每種模式的前後對照見 [PATTERNS.md](PATTERNS.md)。
 
 ## 安裝
 
@@ -73,43 +34,23 @@
 
 ### Claude.ai 或 Claude Desktop
 
-不用開終端機，網頁版和桌面版都能裝。需要付費方案（Pro、Max、Team 或 Enterprise），而且要開啟程式碼執行功能。
+需要付費方案（Pro、Max、Team 或 Enterprise），並開啟程式碼執行功能。
 
 1. 下載 [humanizer-zh-tw.zip](https://github.com/nagameTW/formosa-humanizer/releases/latest/download/humanizer-zh-tw.zip)，不用解壓縮。
-2. 到 [Customize > Skills](https://claude.ai/customize/skills) 上傳這個 ZIP，上傳後記得打開。
+2. 到 [Customize > Skills](https://claude.ai/customize/skills) 上傳這個 ZIP，並打開。
 3. 開新對話，說「幫我把這段文字去掉 AI 味」再貼上文字。
 
-請用上面這個連結，不要用 GitHub 綠色按鈕的「Download ZIP」。那包解開的資料夾叫 `formosa-humanizer-main`，Claude 要求資料夾名稱跟技能名稱一樣。
+請使用上方連結，不要用 GitHub 的「Download ZIP」。後者解開的資料夾叫 `formosa-humanizer-main`，Claude 要求資料夾名稱與技能名稱相同。
 
-### Skills CLI（跨環境）
+### Skills CLI
 
 ```bash
 npx skills add nagameTW/formosa-humanizer --global
 ```
 
-`skills` 會自己找出你裝了哪些 agent（Claude Code、GitHub Copilot 等）裝進去，裝之前會先跑一次第三方安全掃描。檔案實際放在 `~/.agents/skills/`，各家 agent 共用同一份。
-
-更新既有安裝：
-
-```bash
-npx skills update humanizer-zh-tw --global
-```
-
-不加 `--global` 的話會裝在目前專案，可以跟專案一起 commit 給協作者用。
-
-### 手動安裝
-
-不想用 `skills` CLI 的話，直接把整個 repo clone 到 agent 放技能的目錄也可以。以 Claude Code 為例：
-
-```bash
-git clone https://github.com/nagameTW/formosa-humanizer.git ~/.claude/skills/humanizer-zh-tw
-```
-
-其他 agent 換成各自的技能目錄就好。記得 clone 整包，只複製 `SKILL.md` 的話，`PATTERNS.md` 和 `references/` 不會跟著過去，SKILL.md 裡的連結會斷掉。裝好之後重開 agent 或重新載入技能。
+更新與手動安裝見 [docs/install.md](docs/install.md)。
 
 ## 使用
-
-直接呼叫並貼上文字：
 
 ```
 /humanizer-zh-tw
@@ -117,33 +58,9 @@ git clone https://github.com/nagameTW/formosa-humanizer.git ~/.claude/skills/hum
 ［貼上要處理的文字］
 ```
 
-或用自然語言：
+也可以用自然語言，例如「幫我把這段文字去掉 AI 味：［文字］」。指向檔案時，他就地改寫，只動散文，程式碼區塊和 frontmatter 不碰。例如「幫我把 docs/announcement.md 去 AI 味」。
 
-```
-幫我把這段文字去掉 AI 味：［文字］
-```
-
-指向檔案時會就地改寫，只動散文部分，程式碼區塊和 frontmatter 不碰：
-
-```
-幫我把 docs/announcement.md 去 AI 味
-```
-
-### 照你的文風改
-
-如果希望改完像你自己寫的，先丟一段你寫過的東西給他：
-
-```
-/humanizer-zh-tw
-
-這是我的寫作範本，請比對我的風格：
-［貼上兩三段你自己寫的文字］
-
-接著幫我改這段：
-［貼上要處理的 AI 文字］
-```
-
-他會看你的句子長短、用詞和標點習慣，照著你的習慣改。有你的範本時，以你的寫法為主，像你平常就愛用破折號的話，他會留著。只有半形標點例外。你習慣用空格斷句沒問題，但中文句子裡不會出現半形逗號、句號。
+若要貼近自己的文風，先提供寫作範本，見 [docs/usage.md](docs/usage.md)。
 
 ## 49 種模式總覽
 
@@ -161,51 +78,61 @@ git clone https://github.com/nagameTW/formosa-humanizer.git ~/.claude/skills/hum
 | 防禦與含糊（47 到 48） | 跟不存在的人爭論、模糊關聯 |
 | 寫給錯的讀者（49） | 回覆時重講對方已知的事 |
 
-偵測要點寫在 `SKILL.md`，前後範例在 `PATTERNS.md`，中國用語對照表在 `references/zh-cn-glossary.md`。這樣 SKILL.md 可以保持精簡，每次呼叫載入的東西少一點，也比較省額度。
-
-## 為什麼不直接翻譯英文版
-
-原版是從維基百科的 [Signs of AI writing](https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing) 指南整理出 33 種 AI 寫作模式。問題是中文的 AI 痕跡跟英文不太一樣，規則照翻會出事。最明顯的是引號。英文版有一條規則要把彎引號改成直引號，直接翻過來就變成叫模型把中文的「」改成英文直引號，根本越改越糟。
-
-所以我把那 33 種改成中文會出現的樣子，再補上 13 種原版沒有的，後來又從上游 v3 挑了 3 種。主要改了這些：
-
-- **中文標點保護**：全形標點不會被改成半形，引號照教育部《重訂標點符號手冊》用「」『』。簡體中文移植版最常出事的就是標點，這裡直接從規則層擋掉。
-- **破折號看用法**：英文原版全面禁用 em dash，但中文的全形破折號（——）本來就是合法標點。這版只改西式用法，像是夾在中文句子裡的半形 em dash，或被當萬用連接詞的破折號，數字區間（1939–1945）照樣保留。
-- **AI 詞彙表用中文語料**：列的是中文 LLM 實際很常吐出來的詞，像彰顯、賦能、格局、開啟新篇章，沒有照翻英文的 watch words。
-- **五種中文專屬模式**：中國用語混入（附對照表）、中文標點西化、括號補充濫用、連續重複行、萬用受眾套語。
-- **英文專屬模式換掉**：連字號複合詞濫用只有英文有，換成中文對應的「四字格與成語堆疊」。
-- **三種節奏與立場模式**：節奏與版面均勻化、情感貼標籤與罐頭意象、假平衡騎牆。詞彙層的痕跡會隨模型更新慢慢消失，我覺得這幾種會留比較久。
-- **三種中文標點模式**：冒號與分號當萬用連接詞、引號當強調（scare quotes）、驚嘆號連發。破折號被擋掉之後，同樣的毛病常常換個符號跑出來。
-- **兩種工具痕跡模式**：一種是 AI 工具殘留物，像複製貼上帶進來的 `utm_source=chatgpt.com`、`turn0search` 引用殘碼、沒填的 `[產品名]` 佔位符。另一種是幻覺引用與假精確，也就是看起來很精確、其實查不到的數據和語錄，這種只會標出來請作者查證，不會幫你刪或改。
-- **語域對照**：公文、新聞、部落格、學術各有該有的寫法。改寫前先認文類，公文的制式用語、學術的被動式不會被當成痕跡刪掉。
-- **跟進上游 v3**：上游後來改版又多抓了幾種痕跡，我挑了三種補進來，分別是跟不存在的人爭論、模糊關聯、回覆時重講對方已知的事。訊號強弱分級和「檢查有沒有弄丟原文主張」這一步也一起跟上。
-
-原版 v2.9.0 之後加的機制也都留著，包括禁止捏造事實、文風校準、避免誤判真人寫作的偵測指引，以及貼文、檔案、嵌入三種呼叫模式。另外因為是給 agent 用的，我多加了一道**安全邊界**。要改寫的文字只當素材，稿件裡就算夾著「忽略規則」「讀取檔案」這種提示注入，也不會被當成指令執行。
-
-## 支援環境
-
-要在支援 skill 的環境裡才跑得動，像 Claude Code、Codex CLI 這類 agent，或是上傳到 Claude.ai、Claude Desktop（見「安裝」）。其他沒有載入技能機制的聊天介面，硬要用的話可以把 SKILL.md 整份貼進對話當提示詞，勉強能用，但檔案模式這類功能就不會動。
+偵測要點在 `SKILL.md`，前後範例在 `PATTERNS.md`，中國用語對照表在 `references/zh-cn-glossary.md`。
 
 ## 這個工具不做什麼
 
-- **不生成內容**：他只負責改寫。你給他一段寫好的文字，他去掉 AI 味還你，不會擴寫、不補建議，也不會幫你多生一段出來。
-- **不是拿來繞過 AI 偵測器的**：目標是讓人讀起來自然，不保證能過 GPTZero、朱雀這類統計式偵測器。上游專案的立場也一樣。
-- **不會改變聊天助理的口氣**：他只處理你交給他的文字，裝了之後 AI 跟你聊天的語氣不會變。
-- **不捏造內容**：原文沒有的事實不會加進去。句子需要具體細節才寫得好的話，他會問你，或寫成不含細節的平實版本。
+- 不生成內容。他只改寫你交給他的文字，不擴寫，不補建議，也不多生一段。
+- 不保證能通過 AI 偵測器。目標是讓人讀起來自然，不針對 GPTZero、朱雀這類統計式偵測器。上游專案的立場相同。
+- 不改變聊天助理的口氣。他只處理交給他的文字，安裝後 AI 的聊天語氣不變。
+- 不捏造內容。原文沒有的事實不會加入。若句子需要具體細節，他會詢問，或寫成不含細節的平實版本。
 
-## 版本歷史
+## 版本
 
-- **1.7.0**（2026-10-02）：目前版本。各版改了什麼見 [CHANGELOG.md](CHANGELOG.md)。
+- **1.7.0**（2026-10-02）：目前版本。各版的變更見 [CHANGELOG.md](CHANGELOG.md)。
+
+## 開發
+
+```bash
+python3 scripts/validate-package.py
+```
+
+此指令檢查版本、模式編號與 README 的數字是否一致。發布前的其他檢查與文件同步規則見 [AGENTS.md](AGENTS.md)。
+
+## 專案結構
+
+```
+├── SKILL.md                  # 技能本體，agent 讀取的指令
+├── PATTERNS.md               # 每種模式的改寫前後範例
+├── references/
+│   └── zh-cn-glossary.md     # 中國用語對照表
+├── docs/
+│   ├── install.md            #   Skills CLI 與手動安裝
+│   ├── usage.md              #   照自己的文風改
+│   ├── example.md            #   完整改寫範例
+│   ├── design.md             #   與英文原版的差異
+│   └── PROMOTION.md          #   推廣與搜尋發現性筆記
+├── scripts/
+│   └── validate-package.py   # 版本、模式編號與 README 數字檢查
+├── agents/openai.yaml        # Codex 介面說明
+├── .claude-plugin/           # Claude Code 外掛與 marketplace 設定
+├── .cursor-plugin/           # Cursor 外掛設定
+├── .github/                  # CI、release ZIP 打包、issue 範本
+├── AGENTS.md                 # 給 AI 編碼代理的指引
+├── CHANGELOG.md              # 各版本的變更
+├── LICENSE
+└── NOTICE
+```
+
+## 回饋
+
+覺得有用的話，歡迎給個星星。遇到沒抓到的 AI 痕跡，或改壞的句子，請[開 issue](https://github.com/nagameTW/formosa-humanizer/issues/new/choose)。
 
 ## 授權與致謝
 
 MIT 授權。
 
-- 模式目錄與方法論來自 [blader/humanizer](https://github.com/blader/humanizer)（MIT）
-- 簡體中文移植的先行者 [op7418/Humanizer-zh](https://github.com/op7418/Humanizer-zh)，他的 issue 區的社群回報是這版很多在地化修正的依據
-- 原始資料來源：[Wikipedia: Signs of AI writing](https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing)，由 [WikiProject AI Cleanup](https://en.wikipedia.org/wiki/Wikipedia:WikiProject_AI_Cleanup) 維護
-- 中國用語對照參考教育部《重訂國語辭典》「大陸地區語詞對照表」附錄，以及 [g0v/moedict-data-csld](https://github.com/g0v/moedict-data-csld) 兩岸差異詞語開放資料
-
-## 回饋
-
-覺得有用的話，給個星星能讓更多人找到這個專案。遇到沒抓到的 AI 痕跡，或改壞的句子，歡迎[開 issue](https://github.com/nagameTW/formosa-humanizer/issues/new/choose) 告訴我。
+- 模式目錄與方法論來自 [blader/humanizer](https://github.com/blader/humanizer)（MIT）。
+- 簡體中文移植的先行者 [op7418/Humanizer-zh](https://github.com/op7418/Humanizer-zh)。他的 issue 區的社群回報，是本版許多在地化修正的依據。
+- 原始資料來源：[Wikipedia: Signs of AI writing](https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing)，由 [WikiProject AI Cleanup](https://en.wikipedia.org/wiki/Wikipedia:WikiProject_AI_Cleanup) 維護。
+- 中國用語對照參考教育部《重訂國語辭典》「大陸地區語詞對照表」附錄，以及 [g0v/moedict-data-csld](https://github.com/g0v/moedict-data-csld) 的兩岸差異詞語開放資料。
